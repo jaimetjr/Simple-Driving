@@ -16,7 +16,7 @@ public class Car : MonoBehaviour
         _speed += _speedGamePerSecond * Time.deltaTime;
 
         transform.Rotate(0f, steerValue * _turnSpeed * Time.deltaTime, 0f);
-        transform.Translate(Vector3.forward * _speed * Time.deltaTime);
+        transform.Translate(_speed * Time.deltaTime * Vector3.forward);
     }
 
     private void OnTriggerEnter(Collider other)
